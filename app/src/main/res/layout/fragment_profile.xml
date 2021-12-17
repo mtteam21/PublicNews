@@ -8,13 +8,16 @@
     tools:context=".Fragments.ProfileFragment">
 
     <LinearLayout
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@drawable/actionbarbg">
 
         <TextView
+            android:layout_marginStart="20dp"
             android:layout_gravity="center_vertical|center"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_marginEnd="5dp"
             android:textAlignment="center"
             android:layout_height="wrap_content"
@@ -23,6 +26,15 @@
             android:textStyle="bold"
             android:textSize="15sp"
             android:layout_marginRight="5dp" />
+
+        <ImageView
+            android:id="@+id/messageIv"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_marginEnd="10dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/message"/>
 
     </LinearLayout>
 
@@ -145,6 +157,9 @@
             android:src="@drawable/newthumbanail"/>
 
             <TextView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:id="@+id/editProfileTv"
                 android:layout_marginTop="10dp"
                 android:textSize="12sp"
                 android:textColor="@color/colorPrimary"
@@ -159,6 +174,7 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:alpha="0.3"
         android:background="@color/colorBlack"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
@@ -169,6 +185,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/dashboardProfile"
             android:padding="5dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
@@ -191,6 +208,7 @@
 
 
         <LinearLayout
+            android:id="@+id/bookmarkProfile"
             android:padding="5dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
@@ -213,6 +231,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/accountProfile"
             android:padding="5dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
@@ -234,6 +253,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/videosProfile"
             android:padding="5dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
@@ -257,7 +277,20 @@
 
     </LinearLayout>
     <RelativeLayout
+        android:alpha="0.3"
         android:background="@color/colorBlack"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/con1"/>
+
+    </LinearLayout>
 </LinearLayout>

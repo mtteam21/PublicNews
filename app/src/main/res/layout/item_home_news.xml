@@ -59,6 +59,7 @@
                 android:src="@drawable/verified"/>
 
             <TextView
+                android:id="@+id/followTvBlink"
                 android:textStyle="bold"
                 android:layout_marginStart="3dp"
                 android:layout_width="wrap_content"
@@ -111,11 +112,20 @@
       </LinearLayout>
 
       <ImageView
+          android:id="@+id/newsThumbanail"
           android:layout_marginTop="5dp"
           android:layout_width="match_parent"
           android:layout_height="200dp"
           android:src="@drawable/newthumbanail"/>
 
+      <com.google.android.exoplayer2.ui.PlayerView
+          android:visibility="gone"
+          android:id="@+id/exoPlayerView"
+          android:layout_width="match_parent"
+          android:layout_height="200dp"
+          >
+
+      </com.google.android.exoplayer2.ui.PlayerView>
 
       <TextView
           android:layout_marginTop="5dp"

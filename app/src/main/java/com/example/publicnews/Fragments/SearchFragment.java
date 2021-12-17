@@ -3,6 +3,7 @@ package com.example.publicnews.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,8 +13,10 @@ import android.view.ViewGroup;
 
 import com.example.publicnews.Adapter.PopularUsersAdapter;
 import com.example.publicnews.Adapter.SearchTagsAdapter;
+import com.example.publicnews.Adapter.TrendingVideosAdapter;
 import com.example.publicnews.Model.PopularUsersModel;
 import com.example.publicnews.Model.TagModel;
+import com.example.publicnews.Model.TrendingVideo;
 import com.example.publicnews.R;
 
 import java.util.ArrayList;
@@ -27,10 +30,11 @@ public class SearchFragment extends Fragment {
     }
 
     private View v;
-    private RecyclerView recyclerView,recyclerView1,popularUsersRecyclerView;
+    private RecyclerView recyclerView,recyclerView1,popularUsersRecyclerView,trendingVideosRecyclerView;
     private PopularUsersAdapter popularUsersAdapter;
     private List<TagModel> tagsList;
     private List<PopularUsersModel> popularUsersModelList;
+    private List<TrendingVideo> trendingVideoList;
     private SearchTagsAdapter adapter,adapter1;
 
     @Override
@@ -40,7 +44,7 @@ public class SearchFragment extends Fragment {
         recyclerView = v.findViewById(R.id.tagRecyclerView);
         recyclerView1 = v.findViewById(R.id.tagRecyclerView1);
         popularUsersRecyclerView = v.findViewById(R.id.usersPopularRecyclerView);
-
+        trendingVideosRecyclerView = v.findViewById(R.id.trendingVideosRecyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(v.getContext());
         linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -84,6 +88,32 @@ public class SearchFragment extends Fragment {
 
         popularUsersAdapter = new PopularUsersAdapter(popularUsersModelList);
         popularUsersRecyclerView.setAdapter(popularUsersAdapter);
+
+        LinearLayoutManager layoutManager =
+                new GridLayoutManager(getActivity(), 2, GridLayoutManager.HORIZONTAL, false);
+        trendingVideosRecyclerView.setLayoutManager(layoutManager);
+
+        trendingVideoList = new ArrayList<>();
+
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+        trendingVideoList.add(new TrendingVideo("",""));
+
+        TrendingVideosAdapter trendingVideosAdapter = new TrendingVideosAdapter(trendingVideoList);
+        trendingVideosRecyclerView.setAdapter(trendingVideosAdapter);
 
 
         return v;

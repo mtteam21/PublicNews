@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 import com.example.publicnews.Adapter.HomeNewsAdapter;
 import com.example.publicnews.AllActivities.MainActivity;
@@ -35,6 +38,7 @@ public class HomeFragment extends Fragment {
     private List<NewsModel> newsModelList;
     private View v;
     private HomeNewsAdapter homeNewsAdapter;
+    private TextView toolBarTv;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,6 +46,8 @@ public class HomeFragment extends Fragment {
 
         v = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = v.findViewById(R.id.homeNewsRecyclerView);
+
+        toolBarTv = v.findViewById(R.id.toolBarTv);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -56,6 +62,9 @@ public class HomeFragment extends Fragment {
         newsModelList.add(new NewsModel("","","","",""));
         newsModelList.add(new NewsModel("","","","",""));
 
+
+        Animation animation = AnimationUtils.loadAnimation(v.getContext(),R.anim.in_width);
+        toolBarTv.startAnimation(animation);
 
         homeNewsAdapter = new HomeNewsAdapter(newsModelList);
         recyclerView.setAdapter(homeNewsAdapter);

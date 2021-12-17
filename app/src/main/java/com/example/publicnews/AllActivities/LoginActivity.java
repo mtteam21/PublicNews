@@ -7,12 +7,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 import com.example.publicnews.R;
 
 public class LoginActivity extends AppCompatActivity {
 
     private CardView loginWithGoogleCardView,loginWithFacebookCardView;
+    private TextView animatedHeadingText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +30,15 @@ public class LoginActivity extends AppCompatActivity {
 
         clickListeners();
 
+        Animation aniSlide = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.in_width);
+
+        animatedHeadingText.startAnimation(aniSlide);
 
     }
     private void findViewByIds() {
         loginWithFacebookCardView = findViewById(R.id.loginWithFacebookCardView);
         loginWithGoogleCardView = findViewById(R.id.loginWithGoogleCardView);
+        animatedHeadingText = findViewById(R.id.headingText);
     }
 
     private void clickListeners() {
@@ -48,6 +56,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this,PermissionActivity.class));
             }
         });
+
+
 
     }
 

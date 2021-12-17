@@ -10,22 +10,25 @@
     tools:context=".AllActivities.PermissionActivity">
 
 
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
         android:layout_centerHorizontal="true"
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:src="@drawable/location"/>
+        android:id="@+id/imageViewLocation"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/locatio"/>
 
     <LinearLayout
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/imageViewLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-    <TextView
+        android:orientation="vertical"
+        tools:ignore="UnknownId">
 
-        android:layout_marginTop="50dp"
+    <TextView
+        android:id="@+id/locationReqTV"
+        android:layout_marginTop="0dp"
         android:textAlignment="center"
+        android:letterSpacing="0.1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"

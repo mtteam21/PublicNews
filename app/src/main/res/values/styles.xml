@@ -21,5 +21,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="RoundedCornersDialog" parent="@style/Theme.MaterialComponents.Dialog">
+        <item name="dialogCornerRadius">18dp</item>
+    </style>
+
 
 </resources>
